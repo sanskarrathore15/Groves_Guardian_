@@ -28,29 +28,4 @@ public class DestroyOnCollision : MonoBehaviour
             }
         }
     }
-    
-
-    //public void OnCollisionEnter(Collision other)
-    //{
-    //    if (other.gameObject.CompareTag("Enemy"))
-    //    {
-    //        // Increment the collision count
-    //       // currentCollisions++;
-
-    //        // Destroy the other GameObject
-    //        Destroy(other.gameObject);
-
-    //        // Check if the required number of collisions has occurred
-    //    //    if (currentCollisions >= collisionCount)
-    //    //    {
-    //    //        // Destroy this GameObject
-    //    //        Destroy(other.gameObject);
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        // Play some effect or sound indicating a collision
-    //    //        Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
-    //    //    }
-    //    }
-    //}
 }
