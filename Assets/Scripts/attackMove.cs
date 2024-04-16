@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class attackMove : MonoBehaviour 
+
+public class attackMove : MonoBehaviour
 {
     public float speed;
     public float fireRate;
-    public GameObject enemys;
-    void Start()
-    {
-        enemys = GameObject.FindGameObjectWithTag("Enemy");
-    }
+
     void Update()
     {
         if (speed != 0)
         {
-           transform.position += transform.forward * (speed * Time.deltaTime);
-            MoveTowardsPlayer();
+            transform.position += transform.forward * (speed * Time.deltaTime);
+            MoveTowardsEnemies();
         }
         else
         {
             Debug.Log("No Speed");
         }
     }
-    public void MoveTowardsPlayer()
-    {
-        if (Vector3.Distance(transform.position, enemys.transform.position) < 10)
-            transform.position = Vector3.MoveTowards(this.transform.position, enemys.transform.position, 40f * Time.deltaTime);
 
+    void MoveTowardsEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            if (Vector3.Distance(transform.position, enemy.transform.position) < 10)
+                transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, 40f * Time.deltaTime);
+        }
     }
 }
