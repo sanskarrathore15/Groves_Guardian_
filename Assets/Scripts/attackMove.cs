@@ -25,7 +25,7 @@ public class attackMove : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(transform.position, enemy.transform.position) < 3)
+            if (Vector3.Distance(transform.position, enemy.transform.position) < 6)
                 transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, 40f * Time.deltaTime);
         }
     }

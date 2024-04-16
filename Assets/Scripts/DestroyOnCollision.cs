@@ -9,15 +9,22 @@ public class DestroyOnCollision : MonoBehaviour
     private int currentCollisions = 0; // Counter for the collisions
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Attack"))
         {
+            
             currentCollisions++;
 
-            //Destroy(gameObject);
+            Destroy(other.gameObject);
+            Debug.Log("destroy_other");
 
             if (currentCollisions >= collisionCount)
             {
-                Destroy(other.gameObject);
+                Destroy(gameObject);
+                Debug.Log("Destroy_itself");
+            }
+            else
+            {
+                Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
             }
         }
     }
