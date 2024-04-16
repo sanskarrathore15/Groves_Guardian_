@@ -6908,7 +6908,7 @@ GameObject:
   - component: {fileID: 1589090091}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6932,7 +6932,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.003, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1589090092
 MeshRenderer:
@@ -9803,7 +9803,7 @@ GameObject:
   - component: {fileID: 2061767837}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9827,7 +9827,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.003, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2061767838
 MeshRenderer:
@@ -14211,6 +14211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2975163150592125734, guid: 91816ded76a57644fb607b93e28b40e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.28
       objectReference: {fileID: 0}
     - target: {fileID: 6548898106393923771, guid: 91816ded76a57644fb607b93e28b40e1,
         type: 3}
