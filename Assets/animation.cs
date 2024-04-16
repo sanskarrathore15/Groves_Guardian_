@@ -80,4 +80,6 @@ public class EnemyController : MonoBehaviour
         // Resume walking
         animator.SetBool("canWalk", true);
     }
+
+   
 }
