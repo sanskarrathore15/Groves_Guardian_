@@ -7,6 +7,7 @@ public class DestroyOnCollision : MonoBehaviour
 {
     public int collisionCount = 3; // Number of collisions required to destroy the GameObject
     private int currentCollisions = 0; // Counter for the collisions
+    public GameObject Destroyvfx;
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Attack"))
@@ -19,6 +20,8 @@ public class DestroyOnCollision : MonoBehaviour
 
             if (currentCollisions >= collisionCount)
             {
+                Instantiate(Destroyvfx, transform.position, Quaternion.identity);
+
                 Destroy(gameObject);
                 Debug.Log("Destroy_itself");
             }

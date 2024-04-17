@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCount: 3
+  Destroyvfx: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
 --- !u!1 &71706126
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCount: 3
+  Destroyvfx: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
 --- !u!1001 &74075018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1636,7 +1640,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210685211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1773,6 +1777,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &271771830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271771826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae03b2fcfe0ec242a83f24d4be6a787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCount: 3
+  Destroyvfx: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
 --- !u!1 &304698467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,6 +3441,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCount: 3
+  Destroyvfx: {fileID: 2955623459812423943, guid: f5507a8c6a22c404ab324980c4e8a11b,
+    type: 3}
 --- !u!65 &557087049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4039,6 +4060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCount: 3
+  Destroyvfx: {fileID: 0}
 --- !u!1 &752082741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5134,7 +5156,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6284471999092637465, guid: 26169785b8e30c944a512729256a05cd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5295,7 +5318,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971452691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6511,6 +6534,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 271771828}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1520612e0566dc64ba11f2b6bfbc557a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 271771830}
   m_SourcePrefab: {fileID: 100100000, guid: 1520612e0566dc64ba11f2b6bfbc557a, type: 3}
 --- !u!4 &1311545734 stripped
 Transform:
@@ -7927,6 +7954,8 @@ MonoBehaviour:
   vfx:
   - {fileID: 1597587572967870993, guid: 6965327a0d9ea7146b29e9f336417e69, type: 3}
   rotateToMouse: {fileID: 210685217}
+  destroyVFX: {fileID: 8443315704496310910, guid: 6ef35fa36e3a65043b2d800600204bdd,
+    type: 3}
 --- !u!114 &1755800186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14470,7 +14499,8 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 888430993620377253, guid: 91816ded76a57644fb607b93e28b40e1, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2760446269888613048, guid: 91816ded76a57644fb607b93e28b40e1,
         type: 3}

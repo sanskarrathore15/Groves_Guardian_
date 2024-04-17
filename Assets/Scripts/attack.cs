@@ -35,6 +35,11 @@ public class Attack : MonoBehaviour
             {
                 vfxObject.transform.localRotation = rotateToMouse.GetRotation();
             }
+
+            // Destroy the VFX object after 0.5 seconds
+            Destroy(vfxObject, 0.5f);
+
+
         }
         else
         {
