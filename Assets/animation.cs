@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
     public Transform player; // Reference to the player's transform
     public float moveSpeed = 1.5f; // Base speed when out of attack range
     public float attackSpeed = 2f; // Reduced speed when in attack range
-    public float attackRange = 1.5f; // Distance at which the enemy attacks the player
+    public float attackRange = 1f; // Distance at which the enemy attacks the player
     public float followRange = 5f; // Distance at which the enemy starts following the player
 
     private Animator animator;
