@@ -65,6 +65,7 @@ public class EnemyController : MonoBehaviour
         // Stop moving
         animator.SetBool("canWalk", false);
 
+
         // Play attack animation
         animator.SetBool("attack", true);
 
