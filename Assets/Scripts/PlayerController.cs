@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool dead = false;
     private bool attack = false;
     private bool jumpattack = false;
-   // private bool move = false;
+    // private bool move = false;
+    public GameObject JumpAttackVfx;
 
    // float jumpTranslation = 20f;
     public Animator animator;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //transform.Translate(0,0,0);
+        JumpAttackVfx.SetActive(false);
     }
 
     void Update()
@@ -119,8 +121,7 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(JumpAttackCoroutine());
                 animator.SetBool("jumpattack", true);
-                //rb.AddForce(Vector3.forward * jumpForce, ForceMode.Impulse);
-                // transform.Translate(Vector3.forward * jumpTranslation * Time.deltaTime);
+               
             }
             else
             {
@@ -146,6 +147,8 @@ public class PlayerController : MonoBehaviour
 
         // Apply force after the delay
         rb.AddForce(Vector3.forward * jumpForce, ForceMode.Impulse);
+
+
     }
 
     public void OnTriggerEnter(Collider other)
