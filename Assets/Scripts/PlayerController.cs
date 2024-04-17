@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool jumpattack = false;
    // private bool move = false;
 
-    float jumpTranslation = 20f;
+   // float jumpTranslation = 20f;
     public Animator animator;
     private float translation = 5f;
 
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
             // If the player is dead, stop all movement
             transform.Translate(0, 0, 0);
             animator.SetBool("isDead", dead);
-            jumpTranslation = 0;
+            //jumpTranslation = 0;
             translation = 0;
         }
     }

@@ -5,7 +5,6 @@ public class DashAbility : MonoBehaviour
 {
     public float dashDistance = 5f; // Distance to dash
     public float dashDuration = 0.2f; // Duration of the dash
-    public float dashCooldown = 0.5f; // Cooldown time between dashes
     public GameObject dashEffectPrefab; // Prefab for dash visual effect
     private bool isDashing = false; // Flag to check if currently dashing
     private Vector3 dashDirection; // Direction of the dash
@@ -56,7 +55,7 @@ public class DashAbility : MonoBehaviour
         EndDash();
 
         // Cooldown before the next dash
-        yield return new WaitForSeconds(dashCooldown);
+        yield return new WaitForSeconds(1f);
         isDashing = false;
     }
 

@@ -111,7 +111,182 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: robot sketchfab(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body.002
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.008868775, y: 0.0059824204, z: -0.00000039339065}
+      rotation: {x: 0.50000006, y: 0.50000006, z: -0.49999997, w: -0.49999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.010980616, y: 0.0073778424, z: 0.010949637}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear.L.002
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.008868775, y: 0.0059824204, z: -0.00000039339065}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0035768836, y: -0.0012781525, z: 0.007518763}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: elbow.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0018032907, y: -0.0021460252, z: 0.0108727645}
+      rotation: {x: -0.45171985, y: 0.5440121, z: -0.36930943, w: 0.6030013}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: forearm.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0010096052, y: -0.0074453517, z: 0.01053548}
+      rotation: {x: -0.4517198, y: 0.5440122, z: -0.36930946, w: 0.6030012}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: hand.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: 0.0002903065, y: -0.0148826325, z: 0.007507578}
+      rotation: {x: 0.59722435, y: -0.58276516, z: 0.29035157, w: -0.46840557}
+      scale: {x: 0.9999997, y: 0.9999998, z: 0.99999994}
+    - name: jets.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: armor.004
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.008868775, y: 0.0059824204, z: -0.00000039339065}
+      rotation: {x: 0.50000006, y: 0.50000006, z: -0.49999997, w: -0.49999994}
+      scale: {x: 1.0406773, y: 1.0406773, z: 1.0406773}
+    - name: armor_color.002
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.008868775, y: 0.004166935, z: -0.00000039339065}
+      rotation: {x: 0.50000006, y: 0.50000006, z: -0.49999997, w: -0.49999994}
+      scale: {x: 1.0581837, y: 1.0581837, z: 1.0581837}
+    - name: eye.002
+      parentName: robot sketchfab(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0035768843, y: -0.001278153, z: -0.0075195506}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: elbow.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0019171656, y: -0.0016678261, z: -0.010972578}
+      rotation: {x: 0.6042557, y: -0.36725348, z: 0.54554754, w: -0.4498643}
+      scale: {x: 1, y: 1, z: 1}
+    - name: forearm_neumatic.L.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0008414122, y: -0.008876785, z: 0.008919208}
+      rotation: {x: -0.4517198, y: 0.5440122, z: -0.36930946, w: 0.6030012}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: forearm.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0011816269, y: -0.0069815535, z: -0.01075442}
+      rotation: {x: 0.60425556, y: -0.36725342, z: 0.5455476, w: -0.44986436}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: forearm_neumatic.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.0010178731, y: -0.00844926, z: -0.009170553}
+      rotation: {x: 0.60425556, y: -0.36725342, z: 0.5455476, w: -0.44986436}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: hand.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: 0.000036977977, y: -0.015632058, z: -0.0075927614}
+      rotation: {x: -0.58806556, y: -0.060263004, z: -0.2578965, w: 0.7642229}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+    - name: ear.R.002
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.010980616, y: 0.007377843, z: -0.010950421}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear.R.001
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.008868775, y: 0.0059824204, z: -0.00000039339065}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: wrist.L
+      parentName: robot sketchfab(Clone)
+      position: {x: 0.00007855594, y: -0.013449819, z: 0.008648741}
+      rotation: {x: -0.4517198, y: 0.5440122, z: -0.36930946, w: 0.6030012}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: wrist.R
+      parentName: robot sketchfab(Clone)
+      position: {x: -0.00021272793, y: -0.013571505, z: -0.008740376}
+      rotation: {x: 0.60425556, y: -0.36725342, z: 0.5455476, w: -0.44986436}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Armature
+      parentName: robot sketchfab(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: body
+      parentName: Armature
+      position: {x: -0.006614331, y: 0.0013832562, z: 0.019407017}
+      rotation: {x: 0.7071069, y: -0.000000042120035, z: -0.000000026270904, w: 0.70710665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear.L
+      parentName: body
+      position: {x: -0.0026292014, y: 0.0075894273, z: 0.009146232}
+      rotation: {x: 0.70710677, y: 0.00000025041456, z: 0.00000021059668, w: 0.70710677}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: ear.L_end
+      parentName: ear.L
+      position: {x: -0, y: 0.006107986, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm.L
+      parentName: body
+      position: {x: 0.0066143316, y: -0.0018487067, z: 0.010994939}
+      rotation: {x: 0.6979345, y: -0.012519652, z: 0.70816433, w: -0.10599055}
+      scale: {x: 1.0000017, y: 1.0000069, z: 1.0000027}
+    - name: hand.L
+      parentName: arm.L
+      position: {x: -3.635614e-10, y: 0.01216329, z: 1.3038516e-10}
+      rotation: {x: -0.07943047, y: -0.0151083255, z: 0.1498718, w: 0.9853939}
+      scale: {x: 1.0000057, y: 1.0000093, z: 1.000007}
+    - name: hand.L_end
+      parentName: hand.L
+      position: {x: -0, y: 0.0039223027, z: 0}
+      rotation: {x: 0.024140414, y: -0.005615112, z: 0.16672698, w: 0.98569155}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ear.R
+      parentName: body
+      position: {x: -0.0026292014, y: 0.0075894264, z: -0.009146232}
+      rotation: {x: 0.00000009133779, y: -0.9753423, z: 0.22069761, w: -0.00000009541418}
+      scale: {x: 1.0000029, y: 1.0000001, z: 1.0000001}
+    - name: ear.R_end
+      parentName: ear.R
+      position: {x: -0, y: 0.006107987, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: arm.R
+      parentName: body
+      position: {x: 0.00661433, y: -0.0018487067, z: -0.010994939}
+      rotation: {x: 0.70725983, y: 0.119224265, z: 0.69672525, w: 0.011964741}
+      scale: {x: 1.0000021, y: 1.0000048, z: 1.0000051}
+    - name: hand.R
+      parentName: arm.R
+      position: {x: 6.6600475e-10, y: 0.01216329, z: 1.6763806e-10}
+      rotation: {x: -0.05815438, y: 0.01970627, z: 0.015775288, w: 0.99798846}
+      scale: {x: 1.0000038, y: 1.0000058, z: 1.0000027}
+    - name: hand.R_end
+      parentName: hand.R
+      position: {x: -0, y: 0.0039223027, z: 0}
+      rotation: {x: -0.004057914, y: -0.0000000018626451, z: -0.319883, w: 0.94744843}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Camera
+      parentName: robot sketchfab(Clone)
+      position: {x: 0.06265073, y: -0.006974784, z: 0.057960104}
+      rotation: {x: -0.01600649, y: -0.85477465, z: -0.02640879, w: 0.5180798}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
