@@ -34,7 +34,7 @@ public class spider_waypoints : MonoBehaviour
 
         // Move the spider towards the current waypoint
         transform.Translate(direction * movementSpeed * Time.deltaTime, Space.World);
-        transform.LookAt(waypoints[currentWaypointIndex].position);
+       // transform.LookAt(waypoints[currentWaypointIndex].position);
 
         // Check if the spider has reached the current waypoint
         if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
@@ -42,15 +42,34 @@ public class spider_waypoints : MonoBehaviour
             // Move to the next waypoint
             currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
 
-            // Check if the spider is moving along the z-axis from a lower to a higher value
-            if (transform.position.z > previousZPosition)
+            if(currentWaypointIndex == 0)
             {
+                transform.rotation = Quaternion.Euler(0, 90f, 0f);
+
+            }
+
+            // Check if the spider is moving along the z-axis from a lower to a higher value
+            if (currentWaypointIndex == 8)
+            {
+
                 // Rotate the spider along the x-axis by 180 degrees
-                transform.rotation = Quaternion.Euler(-180f, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+                transform.rotation = Quaternion.Euler(0f,90f,-90f);
+            }
+            if (currentWaypointIndex == 10)
+            {
+
+                // Rotate the spider along the x-axis by 180 degrees
+               transform.rotation = Quaternion.Euler(0f,-90f,180f);
+            }
+            if (currentWaypointIndex == 17)
+            {
+
+                // Rotate the spider along the x-axis by 180 degrees
+                transform.rotation = Quaternion.Euler(180f, 90f, 90f);
             }
 
             // Update the previous z-coordinate
-            previousZPosition = transform.position.z;
+            // previousZPosition = transform.position.z;
         }
     }
 }
