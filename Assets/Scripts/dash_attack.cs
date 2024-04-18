@@ -45,13 +45,7 @@ public class DroneDashAttack : MonoBehaviour
         Vector3 targetPosition = player.position - (player.forward * followDistance);
 
         // Smoothly move towards the target position
-        Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
-        
-        // Ensure Y-axis remains at 0.25f
-        newPosition.y = 0.25f;
-
-        // Update the position
-        transform.position = newPosition;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
       
         // Rotate to look at the player
         transform.LookAt(player);
