@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private bool dead = false;
     private bool attack = false;
     private bool jumpattack = false;
+    private bool ComboAttack = false;
+    private bool CombatAttack = false;
+
     // private bool move = false;
     public GameObject JumpAttackVfx;
 
@@ -87,6 +90,24 @@ public class PlayerController : MonoBehaviour
             {
                 jumpattack = false;
             }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+
+                CombatAttack = true;
+            }
+            else
+            {
+                CombatAttack = false;
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+
+                ComboAttack = true;
+            }
+            else
+            {
+                ComboAttack = false;
+            }
 
             // Perform actions based on inputs
             if (jump)
@@ -116,6 +137,22 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetBool("attack", false);
+            }
+            if (CombatAttack)
+            {
+                animator.SetBool("CombatAttack", true);
+            }
+            else
+            {
+                animator.SetBool("CombatAttack", false);
+            }
+            if (ComboAttack)
+            {
+                animator.SetBool("ComboAttack", true);
+            }
+            else
+            {
+                animator.SetBool("ComboAttack", false);
             }
             if (jumpattack)
             {
