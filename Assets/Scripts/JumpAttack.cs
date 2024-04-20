@@ -39,7 +39,17 @@ public class JumpAttack : MonoBehaviour
     {
         if (firePoint != null && effectToSpawn != null)
         {
-            StartCoroutine(JumpAttackVfxCoroutine());
+            // Check the direction the player is facing
+            Vector3 spawnDirection = transform.right; // Assuming the player's forward direction is along the X-axis
+
+            // If the player is facing left, flip the spawn direction
+            if (transform.localScale.x <= 0)
+            {
+                spawnDirection *= -1;
+            }
+
+            // Start the coroutine to spawn VFX
+            StartCoroutine(JumpAttackVfxCoroutine(spawnDirection));
         }
         else
         {
@@ -47,12 +57,14 @@ public class JumpAttack : MonoBehaviour
         }
     }
 
-    IEnumerator JumpAttackVfxCoroutine()
+    IEnumerator JumpAttackVfxCoroutine(Vector3 direction)
     {
         // Delay the attack by 0.5 seconds
         yield return new WaitForSeconds(1.5f);
-        // Instantiate the VFX object at firePoint position
+        // Instantiate the VFX object with adjusted position and direction
         GameObject vfxObject = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
+        // Set the VFX object's direction
+        vfxObject.transform.right = direction;
         // Destroy the VFX object after 7 seconds
         Destroy(vfxObject, 1f);
     }

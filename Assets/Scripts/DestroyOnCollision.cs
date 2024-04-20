@@ -32,5 +32,26 @@ public class DestroyOnCollision : MonoBehaviour
                 Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
             }
         }
+
+        //else if(other.gameObject.CompareTag("SpecialAttack"))
+        //{
+
+        //    currentCollisions++;
+
+        //    Debug.Log("destroy_other");
+        //    Instantiate(collidevfx, transform.position, Quaternion.identity);
+
+        //    if (currentCollisions >= collisionCount)
+        //    {
+        //        Instantiate(Destroyvfx, transform.position, Quaternion.identity);
+
+        //        Destroy(gameObject);
+        //        Debug.Log("Destroy_itself");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
+        //    }
+        //}
     }
 }
