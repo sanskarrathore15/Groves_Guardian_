@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool jumpattack = false;
     private bool ComboAttack = false;
     private bool CombatAttack = false;
+    private int jumpsLeft = 2; // Number of jumps allowed
 
     // private bool move = false;
     public GameObject JumpAttackVfx;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Check for jump input
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft > 0)
             {
 
                 jump = true;
@@ -112,10 +113,10 @@ public class PlayerController : MonoBehaviour
             // Perform actions based on inputs
             if (jump)
             {
-
+                rb.velocity = Vector3.zero; // Reset velocity to prevent additive jumps
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 animator.SetBool("isJump", true);
-                // transform.Translate(Vector3.up * jumpTranslation * Time.deltaTime);
+                jumpsLeft--; // Decrease jumps left after jumping
             }
             else
             {
@@ -171,26 +172,17 @@ public class PlayerController : MonoBehaviour
             // If the player is dead, stop all movement
             transform.Translate(0, 0, 0);
             animator.SetBool("isDead", dead);
-            //jumpTranslation = 0;
             translation = 0;
         }
-    }
-    IEnumerator JumpAttackCoroutine()
-    {
-        animator.SetBool("jumpattack", true);
-
-        // Wait for 1 second
-        yield return new WaitForSeconds(2.4f);
-
-        // Apply force after the delay
-        rb.AddForce(Vector3.forward * jumpForce, ForceMode.Impulse);
-
-
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            jumpsLeft = 2; // Reset jumps when player lands on the ground
+        }
+        else if (other.gameObject.CompareTag("Obstacle"))
         {
             dead = true;
         }
