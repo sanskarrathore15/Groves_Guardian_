@@ -50,11 +50,11 @@ public class JumpAttack : MonoBehaviour
     IEnumerator JumpAttackVfxCoroutine()
     {
         // Delay the attack by 0.5 seconds
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         // Instantiate the VFX object at firePoint position
         GameObject vfxObject = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
         // Destroy the VFX object after 7 seconds
-        Destroy(vfxObject, 7f);
+        Destroy(vfxObject, 1f);
     }
 
     IEnumerator ResetAttack()

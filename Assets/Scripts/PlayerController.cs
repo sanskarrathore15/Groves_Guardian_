@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     // private bool move = false;
     public GameObject JumpAttackVfx;
 
-   // float jumpTranslation = 20f;
+    // float jumpTranslation = 20f;
     public Animator animator;
     private float translation = 5f;
 
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
             // Check for jump input
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
-                
+
                 jump = true;
             }
             else
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 animator.SetBool("isJump", true);
-               // transform.Translate(Vector3.up * jumpTranslation * Time.deltaTime);
+                // transform.Translate(Vector3.up * jumpTranslation * Time.deltaTime);
             }
             else
             {
@@ -156,9 +156,9 @@ public class PlayerController : MonoBehaviour
             }
             if (jumpattack)
             {
-                StartCoroutine(JumpAttackCoroutine());
+                //StartCoroutine(JumpAttackCoroutine());
                 animator.SetBool("jumpattack", true);
-               
+
             }
             else
             {
