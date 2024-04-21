@@ -96,19 +96,16 @@ AnimatorStateMachine:
     m_Position: {x: 232.10675, y: 242.68445, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4333356574381959445}
-    m_Position: {x: 480, y: 360, z: 0}
+    m_Position: {x: 580, y: 380, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4399891992711377122}
     m_Position: {x: 230, y: 500, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 7650675471505536040}
-    m_Position: {x: -120, y: 480, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: -7952728396557171489}
-    m_Position: {x: -120, y: 250, z: 0}
+    m_Position: {x: -210, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1891850698394842597}
-    m_Position: {x: 610, y: 230, z: 0}
+    m_Position: {x: 580, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2631369319580615990}
     m_Position: {x: 1020, y: -100, z: 0}
@@ -123,10 +120,10 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: -320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3255368305033832590}
-    m_Position: {x: -140, y: 710, z: 0}
+    m_Position: {x: -150, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8972999736263684189}
-    m_Position: {x: 500, y: 530, z: 0}
+    m_Position: {x: 530, y: 550, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -424,28 +421,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &-1058305961321019910
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 7650675471505536040}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.2500006
-  m_TransitionOffset: 0.06317474
-  m_ExitTime: 0.12243125
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -548,7 +523,6 @@ AnimatorState:
   m_Transitions:
   - {fileID: 4477436010782664859}
   - {fileID: -1902893656158379208}
-  - {fileID: -1058305961321019910}
   - {fileID: -1766685744627783964}
   - {fileID: 3902336255107100406}
   - {fileID: -4063316406917148301}
@@ -569,28 +543,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1101 &1526623673251088008
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions: []
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 680035398871681240}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.93392074
-  m_HasExitTime: 1
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1102 &1891850698394842597
 AnimatorState:
   serializedVersion: 6
@@ -902,34 +854,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &7650675471505536040
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Jump Attack
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 1526623673251088008}
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: a8270f398d78f654b8d45369f8e3cbae,
-    type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &9024552757896867955
 AnimatorState:
   serializedVersion: 6
