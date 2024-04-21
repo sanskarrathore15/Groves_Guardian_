@@ -228,79 +228,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17046229}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &20245334
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.698
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.682
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -37.721
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580332, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_Name
-      value: CFXR4 Sword Trail PLAIN (360 Spiral)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580335, guid: 95b8d3d65b5d7f1409c4ed1723887826,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
 --- !u!1 &33718379
 GameObject:
   m_ObjectHideFlags: 0
@@ -5431,7 +5358,7 @@ GameObject:
   - component: {fileID: 785059618}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7758,12 +7685,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 822521173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1138278216 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 7807871427267102363}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1143637493
 GameObject:
   m_ObjectHideFlags: 0
@@ -9451,7 +9372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1755800182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565300876
 GameObject:
@@ -10821,8 +10742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 4
-  JumpAttackVfx: {fileID: 8129189517650731646, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-    type: 3}
+  JumpAttackVfx: {fileID: 0}
   animator: {fileID: 1755800181}
 --- !u!95 &1755800181
 Animator:
@@ -12893,10 +12813,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 78942791}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4b4dae42df0a4a749a7c18d66ba44a21,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1138278216}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4b4dae42df0a4a749a7c18d66ba44a21,
         type: 3}
@@ -20729,74 +20645,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2683744093564754180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7807871427267102363
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1755800182}
-    m_Modifications:
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.80913484
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.43951797
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731643, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8129189517650731646, guid: 531376dbf9ae19d4c996858dbce4c9b2,
-        type: 3}
-      propertyPath: m_Name
-      value: CFXR4 Sword Trail FIRE (360 Spiral)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 531376dbf9ae19d4c996858dbce4c9b2, type: 3}
 --- !u!1 &7832431152285755242
 GameObject:
   m_ObjectHideFlags: 0
@@ -22075,10 +21923,5 @@ SceneRoots:
   - {fileID: 851692190}
   - {fileID: 543450651600058819}
   - {fileID: 1058305634}
-<<<<<<< Updated upstream
   - {fileID: 703286795}
   - {fileID: 120341283}
-=======
-  - {fileID: 1538746618}
-  - {fileID: 20245334}
->>>>>>> Stashed changes

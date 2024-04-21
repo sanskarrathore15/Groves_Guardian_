@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Check for attack input
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(0))
             {
                 attack = true;
             }
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
             {
                 jumpattack = false;
             }
-            if (Input.GetKeyDown(KeyCode.F) && Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.F))
             {
 
                 CombatAttack = true;
@@ -134,7 +134,6 @@ public class PlayerController : MonoBehaviour
             if (attack)
             {
                 animator.SetBool("attack", true);
-                JumpAttackVfx.SetActive(true);
             }
             else
             {

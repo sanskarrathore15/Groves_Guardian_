@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Timeline;
 
-public class DestroyOnCollision : MonoBehaviour
+public class DestroyOnCollision1 : MonoBehaviour
 {
-    public int collisionCount = 3; // Number of collisions required to destroy the GameObject
+    public int collisionCount = 2; // Number of collisions required to destroy the GameObject
     private int currentCollisions = 0; // Counter for the collisions
     public GameObject Destroyvfx;
     public GameObject collidevfx;
@@ -16,7 +16,6 @@ public class DestroyOnCollision : MonoBehaviour
             
             currentCollisions++;
 
-            Destroy(other.gameObject);
             Debug.Log("destroy_other");
             Instantiate(collidevfx, transform.position, Quaternion.identity);
 
