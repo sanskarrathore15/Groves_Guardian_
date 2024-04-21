@@ -167,9 +167,11 @@ public class PlayerController : MonoBehaviour
         {
             jumpsLeft = 2; // Reset jumps when player lands on the ground
         }
-        else if (other.gameObject.CompareTag("Obstacle"))
+       if (other.gameObject.CompareTag("Obstacle"))
         {
             dead = true;
+            Destroy(gameObject);
         }
+
     }
 }
