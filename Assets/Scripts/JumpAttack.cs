@@ -51,11 +51,26 @@ public class JumpAttack : MonoBehaviour
     {
         // Delay the attack by 0.5 seconds
         yield return new WaitForSeconds(1.5f);
+
         // Instantiate the VFX object at firePoint position
         GameObject vfxObject = Instantiate(effectToSpawn, firePoint.transform.position, Quaternion.identity);
+
+        // Get the direction the player is facing
+        Vector3 direction = transform.forward;
+
+        // If the player is facing left, flip the direction
+        if (transform.localScale.x < 0)
+        {
+            direction *= -1f;
+        }
+
+        // Rotate the VFX object to face the direction the player is facing
+        vfxObject.transform.forward = direction;
+
         // Destroy the VFX object after 7 seconds
         Destroy(vfxObject, 1f);
     }
+
 
     IEnumerator ResetAttack()
     {

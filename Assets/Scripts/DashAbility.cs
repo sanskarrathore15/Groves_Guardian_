@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DashAbility : MonoBehaviour
 {
-    public float dashDistance = 5f; // Distance to dash
+    public float dashDistance = 7f; // Distance to dash
     public float dashDuration = 0.2f; // Duration of the dash
     public GameObject dashEffectPrefab; // Prefab for dash visual effect
     private bool isDashing = false; // Flag to check if currently dashing

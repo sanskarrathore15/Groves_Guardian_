@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     public float jumpForce = 28f;
     private bool jump = false;
-    private bool slide = false;
     private bool dead = false;
     private bool attack = false;
     private bool jumpattack = false;
@@ -18,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     // private bool move = false;
     public GameObject JumpAttackVfx;
+    private GameObject currentJumpAttackVfx; // Reference to the currently spawned jump attack VFX
+
 
     // float jumpTranslation = 20f;
     public Animator animator;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //transform.Translate(0,0,0);
-        JumpAttackVfx.SetActive(false);
+       
     }
 
     void Update()
@@ -63,20 +64,13 @@ public class PlayerController : MonoBehaviour
                 jump = false;
             }
 
-            // Check for slide input
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                slide = true;
-            }
-            else
-            {
-                slide = false;
-            }
 
             // Check for attack input
             if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(0))
             {
                 attack = true;
+               
+
             }
             else
             {
@@ -91,7 +85,7 @@ public class PlayerController : MonoBehaviour
             {
                 jumpattack = false;
             }
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.S))
             {
 
                 CombatAttack = true;
@@ -121,15 +115,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetBool("isJump", false);
-            }
-
-            if (slide)
-            {
-                animator.SetBool("isSlide", true);
-            }
-            else
-            {
-                animator.SetBool("isSlide", false);
             }
             if (attack)
             {
@@ -175,7 +160,7 @@ public class PlayerController : MonoBehaviour
             translation = 0;
         }
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ground"))
