@@ -54,11 +54,11 @@ public class DroneDashAttack : MonoBehaviour
         Vector3 targetPosition = player.position - (player.forward * followDistance);
 
         // Apply y-axis constraint only when not dashing
-        if (!canDash && transform.position.y < -22.5f)
+        if (!canDash && transform.position.y < -23.5f)
         {
-            Vector3 move = new Vector3(transform.position.x, -23.5f, transform.position.z);
+            Vector3 move = new Vector3(transform.position.x, -22.5f, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, move, 8f * Time.deltaTime);
-            if (transform.position.y < -24.3f)
+            if (transform.position.y < -23.3f)
             {
                 rb.velocity = Vector3.zero;
             }

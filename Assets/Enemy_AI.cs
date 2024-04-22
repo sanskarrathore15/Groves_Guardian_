@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
@@ -12,12 +11,15 @@ public class Enemy_AI : MonoBehaviour
 
     private Animator animator;
     private bool isAttacking = false;
+    private bool isShieldActive = false;
     private float defaultYPosition;
+    private Rigidbody rb;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         defaultYPosition = transform.position.y;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -29,6 +31,7 @@ public class Enemy_AI : MonoBehaviour
 
             if (distanceToPlayer <= followRange)
             {
+                animator.SetBool("Run", true);
                 // Rotate towards the player's direction
                 Vector3 direction = (player.position - transform.position).normalized;
                 Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -41,22 +44,18 @@ public class Enemy_AI : MonoBehaviour
                 if (distanceToPlayer <= attackRange)
                 {
                     // Stop moving if the player is in attack range
-                    animator.SetBool("Run", false);
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position, currentSpeed * Time.deltaTime);
+                  //  transform.position = Vector3.MoveTowards(transform.position, transform.position, 0f * Time.deltaTime);
                     StartCoroutine(Attack());
                 }
                 else
                 {
-                    // Move animation
-                    animator.SetBool("Run", true);
-
                     // Move towards the player
                     Vector3 targetPosition = new Vector3(player.position.x, defaultYPosition, player.position.z);
+                    animator.SetBool("Run", true);
                     transform.position = Vector3.MoveTowards(transform.position, targetPosition, currentSpeed * Time.deltaTime);
                 }
 
                 // Check if the enemy is close enough to attack
-              
             }
             else
             {
@@ -64,29 +63,51 @@ public class Enemy_AI : MonoBehaviour
                 animator.SetBool("Run", false);
             }
         }
+
+        // Check for shield activation
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            StartCoroutine(ActivateShield());
+        }
     }
 
-  
-        IEnumerator Attack()
-        {
-            // Set attacking state
-            isAttacking = true;
+    IEnumerator Attack()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float currentSpeed = (distanceToPlayer <= attackRange) ? attackSpeed : moveSpeed;
 
-            // Play attack animation
-            animator.SetBool("Claw_Attack", true);
+        // Set attacking state
+        isAttacking = true;
 
-            // Wait for the duration of the attack animation (or 2 seconds, whichever is longer)
-            float attackDuration = Mathf.Max(0.5f, 1.0f); // 0.5f is your animation duration, 2.0f is the desired stop time
-            yield return new WaitForSeconds(attackDuration);
+        // Play attack animation
+        animator.SetBool("Claw_Attack", true);
+        yield return new WaitForSeconds(.3f);
 
-            // Reset attack state
-            isAttacking = false;
+        // Reset attack state
+        isAttacking = false;
 
-            // Reset attack animation
-            animator.SetBool("Claw_Attack", false);
+        // Reset attack animation
+        animator.SetBool("Claw_Attack", false);
 
-            // Resume moving
-            animator.SetBool("Run", true);
-        }
-    
+        // Resume moving
+        animator.SetBool("Run", true);
+    }
+
+    IEnumerator ActivateShield()
+    {
+        // Set shield active state
+        isShieldActive = true;
+
+        // Play shield animation
+        animator.SetBool("shield_parry", true);
+
+        // Wait for the shield duration
+        yield return new WaitForSeconds(2.0f);
+
+        // Reset shield state
+        isShieldActive = false;
+
+        // Reset shield animation
+        animator.SetBool("shield_parry", false);
+    }
 }

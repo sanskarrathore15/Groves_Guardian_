@@ -7,7 +7,7 @@ public class enemy_shooting : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
 
-    private GameObject player;
+    public Transform player_pos;
     private float timer;
     public float range = 10;
     public float shoot_time = .5f;
@@ -15,13 +15,13 @@ public class enemy_shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+       // player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
+        float distance = Vector3.Distance(transform.position, player_pos.transform.position);
         
 
         if (distance < range)
