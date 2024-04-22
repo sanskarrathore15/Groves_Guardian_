@@ -3,12 +3,9 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Timeline;
 
-public class EnemyAttack : MonoBehaviour
+public class FlashEffect : MonoBehaviour
 {
-    public int collisionCount = 10; // Number of collisions required to destroy the GameObject
-    private int currentCollisions = 0; // Counter for the collisions
-    public GameObject destroyVfx;
-    public GameObject collideVfx;
+   
     public Material temporaryMaterial; // Material to apply temporarily on collision
     public GameObject objectWithOriginalMaterial; // GameObject containing the original material
     private Material originalMaterial; // Original material of the GameObject
@@ -32,7 +29,7 @@ public class EnemyAttack : MonoBehaviour
         GetComponent<Renderer>().material = newMaterial;
 
         // Wait for 1 second
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
 
         // Revert back to the original material
         GetComponent<Renderer>().material = originalMaterial;
@@ -42,22 +39,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyAttack") || other.gameObject.CompareTag("Enemy"))
         {
-            currentCollisions++;
-            Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
-            Instantiate(collideVfx, transform.position, Quaternion.identity);
-            // Start the coroutine to change material temporarily
             StartCoroutine(ChangeMaterialTemporarily(temporaryMaterial));
-
-            if (currentCollisions >= collisionCount)
-            {
-                Instantiate(destroyVfx, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-                Debug.Log("Destroyed itself");
-            }
-            else
-            {
-                
-            }
         }
     }
 }
