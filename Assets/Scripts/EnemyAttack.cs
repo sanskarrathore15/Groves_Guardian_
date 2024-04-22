@@ -3,19 +3,20 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.Timeline;
 
-public class DestroyOnCollision1 : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
-    public int collisionCount = 2; // Number of collisions required to destroy the GameObject
+    public int collisionCount = 10; // Number of collisions required to destroy the GameObject
     private int currentCollisions = 0; // Counter for the collisions
     public GameObject Destroyvfx;
     public GameObject collidevfx;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Attack"))
+        if (other.gameObject.CompareTag("EnemyAttack") || other.gameObject.CompareTag("Enemy"))
         {
-            
+
             currentCollisions++;
 
+            //Destroy(other.gameObject);
             Debug.Log("destroy_other");
             Instantiate(collidevfx, transform.position, Quaternion.identity);
 

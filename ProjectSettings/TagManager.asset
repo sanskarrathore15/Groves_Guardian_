@@ -9,6 +9,9 @@ TagManager:
   - Attack
   - FxTemporaire
   - Obstacle
+  - JumpAttack
+  - CombatAttack
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
