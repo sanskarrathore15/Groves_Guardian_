@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2679105805912697272}
   m_Layer: 0
   m_Name: Spawned
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCount: 3
+  destroyVfx: {fileID: 0}
+  collideVfx: {fileID: 0}
 --- !u!114 &118797828475733846
 MonoBehaviour:
   m_ObjectHideFlags: 0
