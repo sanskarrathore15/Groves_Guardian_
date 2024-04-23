@@ -1,13 +1,17 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Enemy_AI : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
+    public GameObject attackVFXPrefab; // Prefab of the attack VFX
+    public Transform vfxPosition; // Transform of the GameObject providing VFX position
     public float moveSpeed = 60f; // Base speed when out of attack range
     public float attackSpeed = 2f; // Reduced speed when in attack range
-    public float attackRange = 1f; // Distance at which the enemy attacks the player
+    public float attackRange = 2f; // Distance at which the enemy attacks the player
     public float followRange = 15f; // Distance at which the enemy starts following the player
+    public float backwardDistance = 30f; // Distance to move backward when triggered
 
     private Animator animator;
     private bool isAttacking = false;
@@ -35,7 +39,7 @@ public class Enemy_AI : MonoBehaviour
                 // Rotate towards the player's direction
                 Vector3 direction = (player.position - transform.position).normalized;
                 Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
 
                 // Set movement speed based on distance
                 float currentSpeed = (distanceToPlayer <= attackRange) ? attackSpeed : moveSpeed;
@@ -43,8 +47,6 @@ public class Enemy_AI : MonoBehaviour
                 // Move towards the player if not attacking and player is in range
                 if (distanceToPlayer <= attackRange)
                 {
-                    // Stop moving if the player is in attack range
-                  //  transform.position = Vector3.MoveTowards(transform.position, transform.position, 0f * Time.deltaTime);
                     StartCoroutine(Attack());
                 }
                 else
@@ -69,6 +71,12 @@ public class Enemy_AI : MonoBehaviour
         {
             StartCoroutine(ActivateShield());
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            rb.velocity = Vector3.zero;
+            Vector3 backwardPosition = transform.position - transform.forward * backwardDistance;
+            transform.position = Vector3.MoveTowards(transform.position, backwardPosition, moveSpeed * Time.deltaTime);
+        }
     }
 
     IEnumerator Attack()
@@ -81,7 +89,21 @@ public class Enemy_AI : MonoBehaviour
 
         // Play attack animation
         animator.SetBool("Claw_Attack", true);
-        yield return new WaitForSeconds(.3f);
+
+        // Get the forward direction of the enemy
+        Vector3 attackDirection = transform.forward;
+
+        // Instantiate attack VFX at the provided position or slightly in front of the enemy
+        Vector3 spawnPosition = (vfxPosition != null) ? vfxPosition.position : transform.position + attackDirection * 1.5f;
+        yield return new WaitForSeconds(1.73f);
+        GameObject vfxInstance = Instantiate(attackVFXPrefab, spawnPosition, Quaternion.identity);
+        vfxInstance.transform.Rotate(180, -90, 0);
+
+        // Wait for one second
+        yield return new WaitForSeconds(1.0f);
+
+        // Destroy the attack VFX instance
+        Destroy(vfxInstance);
 
         // Reset attack state
         isAttacking = false;
@@ -102,12 +124,13 @@ public class Enemy_AI : MonoBehaviour
         animator.SetBool("shield_parry", true);
 
         // Wait for the shield duration
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         // Reset shield state
         isShieldActive = false;
 
         // Reset shield animation
         animator.SetBool("shield_parry", false);
+        animator.SetBool("Run", true);
     }
 }

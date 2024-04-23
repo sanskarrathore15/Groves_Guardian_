@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool ComboAttack = false;
     private bool CombatAttack = false;
     private int jumpsLeft = 2; // Number of jumps allowed
-
+    public Transform respawn_pt;
     // private bool move = false;
     public GameObject JumpAttackVfx;
     private GameObject currentJumpAttackVfx; // Reference to the currently spawned jump attack VFX
@@ -169,8 +169,7 @@ public class PlayerController : MonoBehaviour
         }
        if (other.gameObject.CompareTag("Obstacle"))
         {
-            dead = true;
-            Destroy(gameObject);
+            transform.position = respawn_pt.position;
         }
 
     }
