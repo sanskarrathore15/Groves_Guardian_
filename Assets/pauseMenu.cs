@@ -6,7 +6,8 @@ public class pauseMenu : MonoBehaviour
     private bool isPaused = false;
 
      void Start()
-    {pauseMenuUI.SetActive(false);
+    {
+        pauseMenuUI.SetActive(false);
         
     }
 

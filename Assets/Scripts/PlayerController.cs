@@ -5,6 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    
+
+    public AudioClip backgroundMusic;
+    //public AudioClip powerUpSound;
+    //public AudioClip combatSound;
+
+    public AudioSource musicSource;
+    public AudioSource soundSource;
+    public AudioClip Jump, powerUp, run, dash;
+
+
     Rigidbody rb;
     public float jumpForce = 28f;
     private bool jump = false;
@@ -24,13 +35,24 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private float translation = 5f;
 
+
+    public void PlayBackgroundMusic()
+    {
+        // Play the background music on loop
+        musicSource.loop = true;
+        musicSource.clip = backgroundMusic;
+        musicSource.Play();
+    }
+
+
     void Start()
     {
         Time.timeScale = 1f;
 
         rb = GetComponent<Rigidbody>();
         //transform.Translate(0,0,0);
-       
+        PlayBackgroundMusic();
+
     }
 
     void Update()
@@ -54,12 +76,20 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("move", false); // Set move to false if no movement key is pressed
             }
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                soundSource.clip = run;
+                soundSource.Play();
+            }
+
 
             // Check for jump input
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft > 0)
             {
 
                 jump = true;
+                soundSource.clip = Jump;
+                soundSource.Play();
             }
             else
             {
@@ -71,7 +101,8 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(0))
             {
                 attack = true;
-               
+                soundSource.clip = powerUp;
+                soundSource.Play();
 
             }
             else
@@ -120,10 +151,14 @@ public class PlayerController : MonoBehaviour
             }
             if (attack)
             {
+                soundSource.PlayOneShot(powerUp);
+
                 animator.SetBool("attack", true);
             }
             else
             {
+
+                soundSource.clip = null;
                 animator.SetBool("attack", false);
             }
             if (CombatAttack)

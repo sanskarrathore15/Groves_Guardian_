@@ -32,4 +32,9 @@ public class mainmenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(0);
     }
+
+    public void restart()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
 }
