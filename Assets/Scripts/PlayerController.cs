@@ -6,16 +6,6 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     
-
-    public AudioClip backgroundMusic;
-    //public AudioClip powerUpSound;
-    //public AudioClip combatSound;
-
-    public AudioSource musicSource;
-    public AudioSource soundSource;
-    public AudioClip Jump, powerUp, run, dash;
-
-
     Rigidbody rb;
     public float jumpForce = 28f;
     private bool jump = false;
@@ -36,13 +26,8 @@ public class PlayerController : MonoBehaviour
     private float translation = 5f;
 
 
-    public void PlayBackgroundMusic()
-    {
-        // Play the background music on loop
-        musicSource.loop = true;
-        musicSource.clip = backgroundMusic;
-        musicSource.Play();
-    }
+    public AudioSource SoundEffects;
+    public AudioClip Jump, Run;
 
 
     void Start()
@@ -50,9 +35,8 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1f;
 
         rb = GetComponent<Rigidbody>();
+        SoundEffects = GetComponent<AudioSource>();
         //transform.Translate(0,0,0);
-        PlayBackgroundMusic();
-
     }
 
     void Update()
@@ -65,22 +49,23 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Vector3.forward * translation * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 animator.SetBool("move", true); // Set move to true
+                SoundEffects.clip = Run;
+                SoundEffects.Play();
+
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 transform.Translate(Vector3.forward * translation * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0, 180, 0); // Rotate the player 180 degrees around the Y-axis
                 animator.SetBool("move", true); // Set move to true
+                SoundEffects.PlayOneShot(Run);
+                
             }
             else
             {
                 animator.SetBool("move", false); // Set move to false if no movement key is pressed
             }
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-            {
-                soundSource.clip = run;
-                soundSource.Play();
-            }
+            
 
 
             // Check for jump input
@@ -88,8 +73,8 @@ public class PlayerController : MonoBehaviour
             {
 
                 jump = true;
-                soundSource.clip = Jump;
-                soundSource.Play();
+                
+
             }
             else
             {
@@ -101,8 +86,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButton(0))
             {
                 attack = true;
-                soundSource.clip = powerUp;
-                soundSource.Play();
+                
 
             }
             else
@@ -140,6 +124,9 @@ public class PlayerController : MonoBehaviour
             // Perform actions based on inputs
             if (jump)
             {
+                SoundEffects.Stop();
+                SoundEffects.clip = Jump;
+                SoundEffects.Play();
                 rb.velocity = Vector3.zero; // Reset velocity to prevent additive jumps
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 animator.SetBool("isJump", true);
@@ -151,14 +138,14 @@ public class PlayerController : MonoBehaviour
             }
             if (attack)
             {
-                soundSource.PlayOneShot(powerUp);
+                
 
                 animator.SetBool("attack", true);
             }
             else
             {
 
-                soundSource.clip = null;
+                
                 animator.SetBool("attack", false);
             }
             if (CombatAttack)
