@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
+
         rb = GetComponent<Rigidbody>();
         //transform.Translate(0,0,0);
         PlayBackgroundMusic();

@@ -11,6 +11,8 @@ public class DestroyOnCollision : MonoBehaviour
     //private Animator animator;
     //private bool death = false;
     //public static int death_count=0;
+    public int enemy = 0;
+    public int hero = 0;
 
     // Reference to the health bar UI Image component
     public Image healthBar;
@@ -46,7 +48,7 @@ public class DestroyOnCollision : MonoBehaviour
             {
               //  animator.SetBool("shield_parry", false); animator.SetBool("Claw_Attack", false); animator.SetBool("Run", false);
                 //animator.SetBool("death", true);
-               Destroy(gameObject);
+                Destroy(gameObject);
                 Instantiate(destroyVfx, transform.position, Quaternion.identity);
                 Debug.Log("Destroyed itself");
                 Destroy(bar);
@@ -70,11 +72,18 @@ public class DestroyOnCollision : MonoBehaviour
 
             if (currentCollisions >= collisionCount)
             {
+                if (currentCollisions == 30 && enemy == 1)
+                {
+                    gameOver.Game_Complete.gameObject.SetActive(true);
+                    Time.timeScale = 0f;
+                }
+
                 Destroy(gameObject);
                 Instantiate(destroyVfx, transform.position, Quaternion.identity);
                 Debug.Log("Destroyed itself");
                 Destroy(bar);
             }
+
             else
             {
                 Debug.Log("Collision with Enemy. " + (collisionCount - currentCollisions) + " more collision(s) required.");
@@ -94,7 +103,18 @@ public class DestroyOnCollision : MonoBehaviour
 
             if (currentCollisions >= collisionCount)
             {
-                Destroy(gameObject);
+
+                if(collisionCount == 60)
+                {
+                    gameOver.GameOver.gameObject.SetActive(true);
+                }
+
+                if (collisionCount == 30 )
+                {
+                    gameOver.Game_Complete.gameObject.SetActive(true);
+                }
+
+                    Destroy(gameObject);
                 Instantiate(destroyVfx, transform.position, Quaternion.identity);
                 Debug.Log("Destroyed itself");
                 Destroy(bar);
@@ -131,5 +151,7 @@ public class DestroyOnCollision : MonoBehaviour
         ////   animator.SetBool("shield_parry", false); animator.SetBool("Claw_Attack", false); animator.SetBool("Run", false);
         //  //    animator.SetBool("death", true);
         //    }
+
+       
     }
 }

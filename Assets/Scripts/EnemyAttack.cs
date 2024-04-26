@@ -8,6 +8,8 @@ public class EnemyAttack : MonoBehaviour
     private int currentCollisions = 0; // Counter for the collisions
     public GameObject destroyVfx;
     public GameObject collideVfx;
+    public int enemy = 0;
+    public int hero = 0;
 
     // Reference to the health bar UI Image component
     public Image healthBar;
@@ -41,6 +43,17 @@ public class EnemyAttack : MonoBehaviour
 
             if (currentCollisions >= collisionCount)
             {
+                if(currentCollisions == 60 && hero == 1)
+                {
+                    Time.timeScale = 0f;
+                    gameOver.GameOver.gameObject.SetActive(true);
+                }
+                if (currentCollisions == 30 && enemy == 1)
+                {
+                    Time.timeScale = 0f;
+                    gameOver.Game_Complete.gameObject.SetActive(true);
+                }
+
                 Instantiate(destroyVfx, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 Debug.Log("Destroyed itself");
