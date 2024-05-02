@@ -23,7 +23,7 @@ public class EnemyAttack : MonoBehaviour
             Debug.LogError("Health Bar Image reference is not set!");
         }
 
-        bar.SetActive(false);
+       
     }
 
     public void OnTriggerEnter(Collider other)
@@ -81,6 +81,6 @@ public class EnemyAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
 
-        bar.SetActive(false );
+        //bar.SetActive(false );
     }
 }

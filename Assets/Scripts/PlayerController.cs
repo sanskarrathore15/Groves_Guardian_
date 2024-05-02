@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Vector3.forward * translation * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 animator.SetBool("move", true); // Set move to true
-                SoundEffects.clip = Run;
-                SoundEffects.Play();
+                //SoundEffects.clip = Run;
+                //SoundEffects.Play();
 
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -58,15 +58,26 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Vector3.forward * translation * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0, 180, 0); // Rotate the player 180 degrees around the Y-axis
                 animator.SetBool("move", true); // Set move to true
-                SoundEffects.PlayOneShot(Run);
-                
+                //SoundEffects.clip = Run;
+                //SoundEffects.Play();
+
             }
             else
             {
                 animator.SetBool("move", false); // Set move to false if no movement key is pressed
             }
-            
 
+            // Play run audio continuously while the movement key is held down
+            if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) && !SoundEffects.isPlaying && !jump)
+            {
+                SoundEffects.clip = Run;
+                if (!SoundEffects.isPlaying)
+                    SoundEffects.Play();
+            }
+            else if (!(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)))
+            {
+                SoundEffects.Stop(); // Stop the audio when no movement key is pressed
+            }
 
             // Check for jump input
             if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && jumpsLeft > 0)
